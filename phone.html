@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴대전화 키패드</title>
+     <link rel="stylesheet" type="text/css" href="./commons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        .target {
+            word-break:break-all;
+            width: 200px;
+            min-height : 2.5em; 
+            margin-left : 200px; 
+            padding : 8px; 
+            border: 1px solid black;
+        }
+        .btn {
+            width: 56px;   
+        }
+    </style>
+    
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type = "text/javascript">
+        $(function(){
+            $(".btn-number").on("click", function(){
+                var result = $(".target").text() + $(this).text();
+                $(".target").text(result);
+                //$(".target").append($(this).text());
+            });
+
+            $(".btn-remove").on("click", function(){
+                $(".target").text("");
+            });
+        });
+    </script>
+</head>
+<body>
+        <div class="container w-600">
+        <div class="cell center">
+            <h1>휴대전화 키패드</h1>
+        </div>
+        <div class="cell center">
+            <div class="target"></div>
+        </div>
+        <div class="cell center">
+            <div class="flex-box flex-center">
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">7</button>
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">8</button>
+            <button type="button" class="btn btn-number">9</button>
+            </div>
+            </div>
+            <div class="cell center">
+            <div class="flex-box flex-center">
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">4</button>
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">5</button>
+            <button type="button" class="btn btn-number">6</button>
+            </div>    
+            </div>
+            <div class="cell center">
+            <div class="flex-box flex-center">
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">1</button>
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">2</button>
+            <button type="button" class="btn btn-number">3</button>
+            </div>
+            </div>
+            <div class="cell center">
+            <div class="flex-box flex-center">
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">*</button>
+            <button type="button" class="btn btn-number" style="margin-right: 15px;">0</button>
+            <button type="button" class="btn btn-number">#</button>
+            </div>
+            </div>
+        <div class="cell center">
+            <button type="button" class="btn btn-negative btn-remove" style="width: 200px;">전체 지우기</button>
+        </div>
+    </div>
+</body>
+</html>
